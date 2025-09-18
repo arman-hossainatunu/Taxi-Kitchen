@@ -84,11 +84,19 @@ const displayFoodDetails = (foodDetails) => {
   const detailContainer = document.getElementById("detail-container");
   detailContainer.innerHTML = `
       <div>
-      <h1>${foodDetails.title}</h1>
-        <img src="${foodDetails.foodImg}" alt="">
-      
+         <h1 class="text-2xl mb-4">${foodDetails.title}</h1>
+        <img class="w-full h-[300px] rounded-md mx-auto" src="${foodDetails.foodImg}" alt="">
+        <div class="flex justify-around items-center my-5">
+        <h1>${foodDetails.category}</h1> 
+        <h1>${foodDetails.area}</h1>
+        <h1>Price:${foodDetails.price}$</h1>
+        </div> 
+        <div class="flex justify-center">
+        <button class="text-white " ><a target="_blank" class="mx-auto w-11 rounded-lg bg-red-400 px-10 py-2"  href="${foodDetails.video}">video</a></button>
+      </div>
       </div>
   `;
+  document.getElementById("my_modal_3").showModal();
 };
 // Call function
 loadCategories();
